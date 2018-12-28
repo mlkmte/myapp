@@ -1,0 +1,20 @@
+page-createcompany {
+    ion-content{
+        margin-top: 10px !important;
+    }
+
+    .label[stacked] {
+        font-size: 1.7rem;
+        font-weight: 500;
+    }
+
+    .btnItem .item-inner {
+        border: none !important;
+    }
+
+    .item-inner .button {
+        height: 40px;
+        font-weight: bold;
+        font-size: 20px;
+    }
+}

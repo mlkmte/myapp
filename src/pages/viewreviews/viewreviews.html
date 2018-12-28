@@ -1,0 +1,47 @@
+<ion-header>
+    <ion-navbar>
+      <ion-title>Reviews</ion-title>
+    </ion-navbar>
+  </ion-header>
+  
+  
+  <ion-content>
+    <ion-item *ngFor="let rating of company.rating" (click)="showAlert(rating)">
+      <ion-row>
+        <ion-col col-2>
+          <ion-avatar item-start>
+            <img *ngIf="rating.user" src="https://res.cloudinary.com/myrateapp/image/upload/v{{rating.user.imageVersion}}/{{rating.user.imageId}}">
+          </ion-avatar>
+        </ion-col>
+  
+        <ion-col col-10 class="rowCol">
+          <h2 class="companyname" text-wrap>
+            {{rating.user.fullname}}
+          </h2>
+  
+          <ion-col class="dataCol">
+            <ion-row>
+              <ion-col col-12 text-wrap>
+                <span class="time">
+                  {{GetReviewTime(rating.created)}}
+                </span>
+              </ion-col>
+  
+              <ion-col col-12 class="rating">
+                <span class="avg">
+                  <newrating [ratingnumber]="rating.userOverall"></newrating>
+                  <p text-wrap>
+                    {{rating.review.substr(0, 20)}}...
+                  </p>
+                </span>
+              </ion-col>
+              
+            </ion-row>
+          </ion-col>
+  
+        </ion-col>
+  
+      </ion-row>
+    </ion-item>
+  </ion-content>
+  

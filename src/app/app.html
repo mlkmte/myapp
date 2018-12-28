@@ -1,0 +1,37 @@
+<ion-menu [content]="content"  id="menu-avatar">
+
+  <ion-content>
+    <div>
+      <ion-row style="align-items:center">
+        <ion-col col-12 class="imgCol">
+          <img *ngIf="user" class="user-avatar round" src="https://res.cloudinary.com/myrateapp/image/upload/v{{user.imageVersion}}/{{user.imageId}}">
+        </ion-col>
+      </ion-row>
+      <ion-row style="justify-content: center">
+        <h3 *ngIf="user" >{{user.fullname}}</h3>
+      </ion-row>
+    </div>
+    <ion-list no-lines>
+      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
+        <ion-icon [name]="p.icon" item-left></ion-icon>  
+        {{p.title}}
+      </button>
+    </ion-list>
+  
+    <ion-list no-lines>
+      <button ion-item menuClose (click)="settings()">
+        <ion-icon name="settings" item-left></ion-icon>
+        Paramètres
+      </button>          
+      <button ion-item menuClose (click)="logout()">
+        <ion-icon name="log-out" item-left></ion-icon>
+        Déconnexion
+      </button>      
+    </ion-list>
+
+  </ion-content>
+
+</ion-menu>
+
+<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

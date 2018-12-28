@@ -1,0 +1,41 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Créer une entreprise</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <div ion-fixed style="height:100%; width:100%;">
+    <ion-item>
+      <ion-label color="primary" stacked>Nom de l'entreprise'</ion-label>
+      <ion-input type="text" [(ngModel)]="name"></ion-input>
+    </ion-item>    
+    <ion-item>
+      <ion-label color="primary" stacked>Adresse</ion-label>
+      <ion-input type="text"  [(ngModel)]="address"></ion-input>
+    </ion-item>    
+    <ion-item>
+      <ion-label color="primary" stacked>Ville</ion-label>
+      <ion-input type="text"  [(ngModel)]="city"></ion-input>
+    </ion-item>    
+    <ion-item>
+      <ion-label color="primary" stacked>Pays</ion-label>
+      <ion-input type="text"  [(ngModel)]="country"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label color="primary" stacked>Secteur</ion-label>
+      <ion-input type="text"  [(ngModel)]="sector"></ion-input>
+    </ion-item>    
+    <ion-item>
+      <ion-label color="primary" stacked>Site internet</ion-label>
+      <ion-input type="text"  [(ngModel)]="website"></ion-input>
+    </ion-item>
+    <ion-item class="btnItem">
+      <button ion-button block (click)="register()">Valider</button>
+    </ion-item>
+  </div>
+</ion-content>

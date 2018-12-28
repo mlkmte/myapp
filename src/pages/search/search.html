@@ -1,0 +1,35 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Recherche</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-searchbar
+    [(ngModel)]="companyname"
+    [showCancelButton]="true"
+    (ionCancel)="onCancel($event)"
+    (ionClear)="onClear($event)"    
+    (keyup)="searchCompany()">
+  </ion-searchbar>
+
+
+  <ion-list *ngIf="showList"> 
+    <ion-item *ngFor="let company of searchResults">
+      <h2>
+        <button ion-item *ngIf="results && showResults.length > 0" (click)="companyProfile(company)"> <!--Affiche si results=true et showResults != vide-->
+          {{company.companyname}}
+        </button>
+      </h2>
+      <button ion-item *ngIf="noResults && showResults.length === 0">
+          {{company.companyname}}
+      </button>
+    </ion-item>
+  </ion-list>
+
+</ion-content>

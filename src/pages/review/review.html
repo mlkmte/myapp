@@ -1,0 +1,46 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{name}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <ion-item>
+    <ion-label color="primary" stacked>culture</ion-label>
+    <ion-range min="1" max="5" [(ngModel)]="culture" pin="true"></ion-range>
+  </ion-item>
+  <ion-item>
+    <ion-label color="primary" stacked>benefice</ion-label>
+    <ion-range min="1" max="5" [(ngModel)]="benefice" pin="true"></ion-range>
+  </ion-item>
+  <ion-item>
+    <ion-label color="primary" stacked>balance</ion-label>
+    <ion-range min="1" max="5" [(ngModel)]="balance" pin="true"></ion-range>
+  </ion-item>
+  <ion-item>
+    <ion-label color="primary" stacked>speed</ion-label>
+    <ion-range min="1" max="5" [(ngModel)]="speed" pin="true"></ion-range>
+  </ion-item>
+  <ion-item>
+    <ion-label color="primary" stacked>overall</ion-label>
+    <ion-range min="1" max="5" [(ngModel)]="overall" pin="true"></ion-range>
+  </ion-item>
+  
+  <ion-grid>
+    <ion-row>
+      <ion-label color="primary" stacked>Review</ion-label>
+      <ion-col col-12>
+        <ion-textarea [(ngModel)]="review"></ion-textarea>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-item>
+    <button ion-button block (click)="addReview()">Add review</button>
+  </ion-item>
+
+</ion-content>

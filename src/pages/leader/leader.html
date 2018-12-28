@@ -1,0 +1,49 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Classement</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+    <ion-item *ngFor="let company of companies let i = index"> <!--Avoir l'index associé-->
+      <ion-row>
+        <ion-col col-2>
+          <ion-avatar item-start>
+            <img *ngIf="company.imageVersion !==''" src="https://res.cloudinary.com/myrateapp/image/upload/v{{company.imageVersion}}/{{company.imageId}}">
+            <img *ngIf="company.imageVersion ===''" src="https://www.smtm.co/assets/no_logo-34f94a7328226646efcee9742e377005.png">
+          </ion-avatar>
+        </ion-col>
+  
+        <ion-col col-10 class="rowCol">
+          <h2 class="companyname" text-wrap>
+            {{company.companyname}}
+          </h2>
+  
+          <ion-col class="dataCol">
+              <ion-row>
+                <ion-col col-12 text-wrap>
+                  <span>
+                    <ion-icon name="star" class="iconClass"></ion-icon>
+                    {{company.totalStars}} Etoiles
+                  </span>
+                </ion-col>
+                <ion-col col-12 text-wrap>
+                  <ion-icon name="add-circle" class="iconClass"></ion-icon>
+                  {{i + 1}}
+                </ion-col>
+    
+                <ion-col col-12 class="rating">
+
+                </ion-col>
+              </ion-row>
+            </ion-col>
+  
+  
+        </ion-col>      
+      </ion-row>
+    </ion-item>
+  </ion-content>

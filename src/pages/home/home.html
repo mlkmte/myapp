@@ -1,0 +1,65 @@
+
+<ion-header no-border>
+
+  <ion-navbar transparent>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <h3 class="header1" *ngIf="user">Salut, {{user.fullname}}</h3>
+  <p class="text-content1"> 
+    Que voules-vous faire aujourd'hui ?
+  </p>
+
+  <ion-card class="card1">
+    <ion-icon name="log-in"></ion-icon>
+      <ion-card-header class="header">
+        Ajouter une entreprise
+      </ion-card-header>
+      <ion-card-content>
+        <p class="txet-content">
+          Ajouter les information de l'entreprise, 
+        </p>
+
+        <button class="btn1" ion-button block (click)="addCompany()">Ajouter</button>
+      </ion-card-content>
+  </ion-card>
+
+  <ion-card class="card2">
+      <ion-icon name="search"></ion-icon>
+        <ion-card-header class="header">
+          Recherche
+        </ion-card-header>
+        <ion-card-content>
+          <p class="txet-content">
+            Recherchez parmis le catalogue des entreprises
+          </p>
+  
+          <button class="btn2" ion-button block (click)="goToSearch()">Rechercher</button>
+        </ion-card-content>
+    </ion-card>
+
+    <ion-card class="card3">
+        <ion-icon name="star"></ion-icon>
+          <ion-card-header class="header">
+            Note
+          </ion-card-header>
+          <ion-card-content>
+            <p class="txet-content">
+              Noter et évaluer une entreprises
+            </p>
+            <button class="btn3" ion-button block (click)="reviewPage()">Noter</button>
+          </ion-card-content>
+      </ion-card>
+
+
+
+
+
+</ion-content>

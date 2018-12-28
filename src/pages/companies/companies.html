@@ -1,0 +1,58 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Toute les entreprises</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <ion-item *ngFor="let company of companies" (click)="companyPofile(company)">
+    <ion-row>
+      <ion-col col-2>
+        <ion-avatar item-start>
+          <img *ngIf="company.imageVersion !==''" src="https://res.cloudinary.com/myrateapp/image/upload/v{{company.imageVersion}}/{{company.imageId}}">
+          <img *ngIf="company.imageVersion ===''" src="https://www.smtm.co/assets/no_logo-34f94a7328226646efcee9742e377005.png">
+        </ion-avatar>
+      </ion-col>
+
+      <ion-col col-10 class="rowCol">
+        <h2 class="companyname" text-wrap>
+          {{company.companyname}}
+        </h2>
+
+        <ion-col class="dataCol">
+            <ion-row>
+              <ion-col col-12 text-wrap>
+                <span>
+                  <ion-icon name="archive" class="iconClass"></ion-icon>
+                  {{company.sector}}
+                </span>
+              </ion-col>
+              <ion-col col-12 text-wrap>
+                <ion-icon name="pin" class="iconClass"></ion-icon>
+                {{company.city}}, {{company.country}}
+              </ion-col>
+  
+              <ion-col col-12 class="rating">
+                <span class="avg">
+                  <rating [ngModel]="averageRating(company.ratingOverall)" 
+                  readOnly="true" 
+                  max="5" 
+                  emptyStarIconName="star-outline"
+                  halfStarIconName="star-half" 
+                  starIconName="star" 
+                  nullable="false"></rating>
+                  ({{averageRating(company.ratingOverall)}})
+                </span>
+              </ion-col>
+            </ion-row>
+          </ion-col>
+
+
+      </ion-col>      
+    </ion-row>
+  </ion-item>
+</ion-content>
